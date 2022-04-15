@@ -61,3 +61,5 @@ C:\Users\zeki.kose\Desktop\GitHub\hesap-makinesi\WindowsFormsApp3\WindowsFormsAp
 C:\Users\zeki.kose\Desktop\GitHub\hesap-makinesi\WindowsFormsApp3\WindowsFormsApp3\bin\Debug\ja\DevExpress.Pdf.v21.2.Core.resources.dll
 C:\Users\zeki.kose\Desktop\GitHub\hesap-makinesi\WindowsFormsApp3\WindowsFormsApp3\bin\Debug\ru\DevExpress.Pdf.v21.2.Core.resources.dll
 C:\Users\zeki.kose\Desktop\GitHub\hesap-makinesi\WindowsFormsApp3\WindowsFormsApp3\obj\Debug\WindowsFormsApp3.csproj.CopyComplete
+C:\Users\zeki.kose\Desktop\GitHub\hesap-makinesi\WindowsFormsApp3\WindowsFormsApp3\obj\Debug\WindowsFormsApp3.exe.licenses
+C:\Users\zeki.kose\Desktop\GitHub\hesap-makinesi\WindowsFormsApp3\WindowsFormsApp3\obj\Debug\WindowsFormsApp3.Form2.resources

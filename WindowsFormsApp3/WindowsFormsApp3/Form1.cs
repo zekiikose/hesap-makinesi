@@ -112,7 +112,7 @@ namespace WindowsFormsApp3
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            this.BackColor = Color.BlueViolet;
+            this.BackColor = Color.OrangeRed;
         }
     }
 }
