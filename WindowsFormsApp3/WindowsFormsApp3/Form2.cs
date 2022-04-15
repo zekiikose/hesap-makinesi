@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Data.Sql;
 
 namespace WindowsFormsApp3
 {
@@ -16,8 +17,6 @@ namespace WindowsFormsApp3
         SqlConnection con;
         SqlCommand cmd;
         SqlDataReader dr;
-
-        //SqlConnection conn = new SqlConnection("Data Source=NT00938; Initial Catalog=deneme; User Id=zeki.kose;");
 
         public Form2()
         {
@@ -31,7 +30,6 @@ namespace WindowsFormsApp3
             cmd = new SqlCommand(sorgu, con);
             cmd.Parameters.AddWithValue("@user", txtUsername.Text);
             cmd.Parameters.AddWithValue("@pass", txtPassword.Text);
-
             con.Open();
             dr = cmd.ExecuteReader();
             if (dr.Read())
@@ -48,6 +46,32 @@ namespace WindowsFormsApp3
             {
                 MessageBox.Show("Kullanıcı adını ve şifrenizi kontrol ediniz.");
             }
+            con.Close();
+        }
+        private void Register()
+        {
+
+            string sex = "male";
+            if (radioButtonMale.Checked == true)
+            {
+                sex = "male";
+            }
+            else if (radioButtonFamale.Checked == true)
+            {
+                sex = "famale";
+            }
+
+            con = new SqlConnection("server=NT00938; Initial Catalog=login;Integrated Security=true");
+            string ekle = "INSERT INTO [dbo].[User] (Name,Surname,Username,Password,Sex) values (@Name,@Surname,@Username,@Password,@Sex)";
+            SqlCommand komut = new SqlCommand();
+            komut = new SqlCommand(ekle, con);
+            con.Open();
+            komut.Parameters.AddWithValue("@Name", txtName.Text);
+            komut.Parameters.AddWithValue("@Surname", txtSurname.Text);
+            komut.Parameters.AddWithValue("@Username", txtUsername.Text);
+            komut.Parameters.AddWithValue("@Password", txtPassword.Text);
+            komut.Parameters.AddWithValue("@Sex", sex);
+            komut.ExecuteNonQuery();
             con.Close();
 
         }
@@ -81,6 +105,16 @@ namespace WindowsFormsApp3
         private void button1_Click(object sender, EventArgs e)
         {
            
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            Register();
         }
     }
 }
