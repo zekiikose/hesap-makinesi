@@ -62,17 +62,21 @@ namespace WindowsFormsApp3
             }
 
             con = new SqlConnection("server=NT00938; Initial Catalog=login;Integrated Security=true");
-            string ekle = "INSERT INTO [dbo].[User] (Name,Surname,Username,Password,Sex) values (@Name,@Surname,@Username,@Password,@Sex)";
+            string ekle = "INSERT INTO Users (Name,Surname,Username,Password,Sex) values (@Name,@Surname,@Username,@Password,@Sex)";
             SqlCommand komut = new SqlCommand();
             komut = new SqlCommand(ekle, con);
             con.Open();
             komut.Parameters.AddWithValue("@Name", txtName.Text);
             komut.Parameters.AddWithValue("@Surname", txtSurname.Text);
-            komut.Parameters.AddWithValue("@Username", txtUsername.Text);
-            komut.Parameters.AddWithValue("@Password", txtPassword.Text);
+            komut.Parameters.AddWithValue("@Username", txtUsername2.Text);
+            komut.Parameters.AddWithValue("@Password", txtPassword2.Text);
             komut.Parameters.AddWithValue("@Sex", sex);
             komut.ExecuteNonQuery();
             con.Close();
+            txtName.Text = "";
+            txtSurname.Text = "";
+            txtUsername2.Text = "";
+            txtPassword2.Text = "";
 
         }
 

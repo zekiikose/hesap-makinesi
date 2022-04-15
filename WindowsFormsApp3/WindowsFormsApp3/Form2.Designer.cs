@@ -46,7 +46,6 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.BtnRegister = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.separatorControl1)).BeginInit();
             this.SuspendLayout();
@@ -224,27 +223,17 @@
             this.label8.TabIndex = 7;
             this.label8.Text = "Password";
             // 
-            // BtnRegister
-            // 
-            this.BtnRegister.BackColor = System.Drawing.Color.Blue;
-            this.BtnRegister.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.BtnRegister.ForeColor = System.Drawing.SystemColors.Control;
-            this.BtnRegister.Location = new System.Drawing.Point(500, 280);
-            this.BtnRegister.Name = "BtnRegister";
-            this.BtnRegister.Size = new System.Drawing.Size(151, 39);
-            this.BtnRegister.TabIndex = 3;
-            this.BtnRegister.Text = "REGİSTER";
-            this.BtnRegister.UseVisualStyleBackColor = false;
-            this.BtnRegister.Click += new System.EventHandler(this.btnSignin_Click);
-            // 
             // button1
             // 
+            this.button1.BackColor = System.Drawing.Color.Blue;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.button1.Location = new System.Drawing.Point(215, 424);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(151, 39);
             this.button1.TabIndex = 8;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Text = "Register";
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // Form2
@@ -265,7 +254,6 @@
             this.Controls.Add(this.txtSurname);
             this.Controls.Add(this.txtUsername2);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.BtnRegister);
             this.Controls.Add(this.btnSignin);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -301,7 +289,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Button BtnRegister;
         private System.Windows.Forms.Button button1;
     }
 }
