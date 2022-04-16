@@ -47,7 +47,6 @@
             this.label8 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.lblsehir = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.separatorControl1)).BeginInit();
             this.SuspendLayout();
@@ -55,7 +54,7 @@
             // txtUsername
             // 
             this.txtUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtUsername.Location = new System.Drawing.Point(28, 84);
+            this.txtUsername.Location = new System.Drawing.Point(28, 70);
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(151, 30);
             this.txtUsername.TabIndex = 0;
@@ -65,7 +64,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label1.Location = new System.Drawing.Point(28, 56);
+            this.label1.Location = new System.Drawing.Point(28, 42);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(102, 25);
             this.label1.TabIndex = 1;
@@ -75,7 +74,7 @@
             // txtPassword
             // 
             this.txtPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtPassword.Location = new System.Drawing.Point(210, 84);
+            this.txtPassword.Location = new System.Drawing.Point(210, 70);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(151, 30);
             this.txtPassword.TabIndex = 0;
@@ -84,7 +83,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label2.Location = new System.Drawing.Point(205, 56);
+            this.label2.Location = new System.Drawing.Point(205, 42);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(98, 25);
             this.label2.TabIndex = 1;
@@ -94,7 +93,7 @@
             // 
             this.btnSignin.BackColor = System.Drawing.Color.Lime;
             this.btnSignin.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnSignin.Location = new System.Drawing.Point(393, 84);
+            this.btnSignin.Location = new System.Drawing.Point(390, 70);
             this.btnSignin.Name = "btnSignin";
             this.btnSignin.Size = new System.Drawing.Size(151, 30);
             this.btnSignin.TabIndex = 3;
@@ -116,9 +115,9 @@
             // separatorControl1
             // 
             this.separatorControl1.Location = new System.Drawing.Point(-6, 114);
-            this.separatorControl1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.separatorControl1.Margin = new System.Windows.Forms.Padding(6);
             this.separatorControl1.Name = "separatorControl1";
-            this.separatorControl1.Padding = new System.Windows.Forms.Padding(18, 18, 18, 18);
+            this.separatorControl1.Padding = new System.Windows.Forms.Padding(18);
             this.separatorControl1.Size = new System.Drawing.Size(581, 36);
             this.separatorControl1.TabIndex = 5;
             // 
@@ -244,15 +243,6 @@
             this.comboBox1.Text = "Seçiniz";
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
-            // lblsehir
-            // 
-            this.lblsehir.AutoSize = true;
-            this.lblsehir.Location = new System.Drawing.Point(415, 360);
-            this.lblsehir.Name = "lblsehir";
-            this.lblsehir.Size = new System.Drawing.Size(44, 16);
-            this.lblsehir.TabIndex = 11;
-            this.lblsehir.Text = "label3";
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -269,7 +259,6 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(717, 627);
-            this.Controls.Add(this.lblsehir);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label3);
@@ -321,7 +310,6 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Label lblsehir;
         private System.Windows.Forms.Label label3;
     }
 }

@@ -17,7 +17,7 @@ namespace WindowsFormsApp3
         SqlConnection con;
         SqlCommand cmd;
         SqlDataReader dr;
-
+        string infocity;
         public Form2()
         {
             InitializeComponent();
@@ -62,7 +62,7 @@ namespace WindowsFormsApp3
             }
 
             con = new SqlConnection("server=NT00938; Initial Catalog=login;Integrated Security=true");
-            string ekle = "INSERT INTO Users (Name,Surname,Username,Password,Sex) values (@Name,@Surname,@Username,@Password,@Sex)";
+            string ekle = "INSERT INTO Users (Name,Surname,Username,Password,Sex,City) values (@Name,@Surname,@Username,@Password,@Sex,@City)";
             SqlCommand komut = new SqlCommand();
             komut = new SqlCommand(ekle, con);
             con.Open();
@@ -71,6 +71,7 @@ namespace WindowsFormsApp3
             komut.Parameters.AddWithValue("@Username", txtUsername2.Text);
             komut.Parameters.AddWithValue("@Password", txtPassword2.Text);
             komut.Parameters.AddWithValue("@Sex", sex);
+            komut.Parameters.AddWithValue("@City", infocity);
             komut.ExecuteNonQuery();
             con.Close();
             txtName.Text = "";
@@ -192,11 +193,9 @@ namespace WindowsFormsApp3
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            int i=1;
+            
             var deger = comboBox1.SelectedIndex;
 
-            
-            
                 string sorgu = "select sehir from iller where id=@id";
                 con = new SqlConnection("server=NT00938; Initial Catalog=login;Integrated Security=true");
                 cmd = new SqlCommand(sorgu, con);
@@ -205,8 +204,9 @@ namespace WindowsFormsApp3
                 SqlDataReader dr = cmd.ExecuteReader();
                 if (dr.Read())
                 {
-                    lblsehir.Text = dr["sehir"].ToString();
-                }
+                    //lblsehir.Text = dr["sehir"].ToString();
+                    infocity = dr["sehir"].ToString();
+            }
             
         }
     }
