@@ -34,7 +34,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.btnSignin = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
-            this.separatorControl1 = new DevExpress.XtraEditors.SeparatorControl();
             this.txtName = new System.Windows.Forms.TextBox();
             this.txtSurname = new System.Windows.Forms.TextBox();
             this.txtUsername2 = new System.Windows.Forms.TextBox();
@@ -48,7 +47,13 @@
             this.button1 = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.separatorControl1)).BeginInit();
+            this.checkEdit1 = new DevExpress.XtraEditors.CheckEdit();
+            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
+            ((System.ComponentModel.ISupportInitialize)(this.checkEdit1.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // txtUsername
@@ -112,15 +117,6 @@
             this.label4.Text = "Open Account";
             this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
-            // separatorControl1
-            // 
-            this.separatorControl1.Location = new System.Drawing.Point(-6, 114);
-            this.separatorControl1.Margin = new System.Windows.Forms.Padding(6);
-            this.separatorControl1.Name = "separatorControl1";
-            this.separatorControl1.Padding = new System.Windows.Forms.Padding(18);
-            this.separatorControl1.Size = new System.Drawing.Size(581, 36);
-            this.separatorControl1.TabIndex = 5;
-            // 
             // txtName
             // 
             this.txtName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
@@ -128,6 +124,8 @@
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(151, 30);
             this.txtName.TabIndex = 0;
+            this.txtName.Click += new System.EventHandler(this.OrtakTxtBox);
+            this.txtName.TextChanged += new System.EventHandler(this.txtName_TextChanged);
             // 
             // txtSurname
             // 
@@ -136,6 +134,8 @@
             this.txtSurname.Name = "txtSurname";
             this.txtSurname.Size = new System.Drawing.Size(151, 30);
             this.txtSurname.TabIndex = 0;
+            this.txtSurname.Click += new System.EventHandler(this.OrtakTxtBox);
+            this.txtSurname.TextChanged += new System.EventHandler(this.txtSurname_TextChanged);
             // 
             // txtUsername2
             // 
@@ -144,6 +144,8 @@
             this.txtUsername2.Name = "txtUsername2";
             this.txtUsername2.Size = new System.Drawing.Size(151, 30);
             this.txtUsername2.TabIndex = 0;
+            this.txtUsername2.Click += new System.EventHandler(this.OrtakTxtBox);
+            this.txtUsername2.TextChanged += new System.EventHandler(this.txtUsername2_TextChanged);
             // 
             // txtPassword2
             // 
@@ -152,6 +154,8 @@
             this.txtPassword2.Name = "txtPassword2";
             this.txtPassword2.Size = new System.Drawing.Size(151, 30);
             this.txtPassword2.TabIndex = 0;
+            this.txtPassword2.Click += new System.EventHandler(this.OrtakTxtBox);
+            this.txtPassword2.TextChanged += new System.EventHandler(this.txtPassword2_TextChanged);
             // 
             // radioButtonMale
             // 
@@ -254,11 +258,95 @@
             this.label3.Text = "City";
             this.label3.Click += new System.EventHandler(this.label8_Click);
             // 
+            // checkEdit1
+            // 
+            this.checkEdit1.Location = new System.Drawing.Point(28, 110);
+            this.checkEdit1.Name = "checkEdit1";
+            this.checkEdit1.Properties.Caption = "Keep me logged in";
+            this.checkEdit1.Size = new System.Drawing.Size(151, 24);
+            this.checkEdit1.TabIndex = 11;
+            // 
+            // labelControl1
+            // 
+            this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.labelControl1.Appearance.ForeColor = System.Drawing.Color.Red;
+            this.labelControl1.Appearance.Options.UseFont = true;
+            this.labelControl1.Appearance.Options.UseForeColor = true;
+            this.labelControl1.Location = new System.Drawing.Point(372, 276);
+            this.labelControl1.Name = "labelControl1";
+            this.labelControl1.Size = new System.Drawing.Size(11, 24);
+            this.labelControl1.TabIndex = 12;
+            this.labelControl1.Text = "*";
+            this.labelControl1.Visible = false;
+            this.labelControl1.Click += new System.EventHandler(this.Ortaklbl);
+            // 
+            // labelControl2
+            // 
+            this.labelControl2.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.labelControl2.Appearance.ForeColor = System.Drawing.Color.Red;
+            this.labelControl2.Appearance.Options.UseFont = true;
+            this.labelControl2.Appearance.Options.UseForeColor = true;
+            this.labelControl2.Location = new System.Drawing.Point(372, 312);
+            this.labelControl2.Name = "labelControl2";
+            this.labelControl2.Size = new System.Drawing.Size(11, 24);
+            this.labelControl2.TabIndex = 12;
+            this.labelControl2.Text = "*";
+            this.labelControl2.Visible = false;
+            this.labelControl2.Click += new System.EventHandler(this.Ortaklbl);
+            // 
+            // labelControl3
+            // 
+            this.labelControl3.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.labelControl3.Appearance.ForeColor = System.Drawing.Color.Red;
+            this.labelControl3.Appearance.Options.UseFont = true;
+            this.labelControl3.Appearance.Options.UseForeColor = true;
+            this.labelControl3.Location = new System.Drawing.Point(372, 200);
+            this.labelControl3.Name = "labelControl3";
+            this.labelControl3.Size = new System.Drawing.Size(11, 24);
+            this.labelControl3.TabIndex = 12;
+            this.labelControl3.Text = "*";
+            this.labelControl3.Visible = false;
+            this.labelControl3.Click += new System.EventHandler(this.Ortaklbl);
+            // 
+            // labelControl4
+            // 
+            this.labelControl4.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.labelControl4.Appearance.ForeColor = System.Drawing.Color.Red;
+            this.labelControl4.Appearance.Options.UseFont = true;
+            this.labelControl4.Appearance.Options.UseForeColor = true;
+            this.labelControl4.Location = new System.Drawing.Point(372, 237);
+            this.labelControl4.Name = "labelControl4";
+            this.labelControl4.Size = new System.Drawing.Size(11, 24);
+            this.labelControl4.TabIndex = 12;
+            this.labelControl4.Text = "*";
+            this.labelControl4.Visible = false;
+            this.labelControl4.Click += new System.EventHandler(this.Ortaklbl);
+            // 
+            // labelControl5
+            // 
+            this.labelControl5.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.labelControl5.Appearance.ForeColor = System.Drawing.Color.Red;
+            this.labelControl5.Appearance.Options.UseFont = true;
+            this.labelControl5.Appearance.Options.UseForeColor = true;
+            this.labelControl5.Location = new System.Drawing.Point(372, 348);
+            this.labelControl5.Name = "labelControl5";
+            this.labelControl5.Size = new System.Drawing.Size(11, 24);
+            this.labelControl5.TabIndex = 12;
+            this.labelControl5.Text = "*";
+            this.labelControl5.Visible = false;
+            this.labelControl5.Click += new System.EventHandler(this.Ortaklbl);
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(717, 627);
+            this.Controls.Add(this.labelControl4);
+            this.Controls.Add(this.labelControl3);
+            this.Controls.Add(this.labelControl5);
+            this.Controls.Add(this.labelControl2);
+            this.Controls.Add(this.labelControl1);
+            this.Controls.Add(this.checkEdit1);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label3);
@@ -270,7 +358,6 @@
             this.Controls.Add(this.radioButtonMale);
             this.Controls.Add(this.txtPassword2);
             this.Controls.Add(this.txtName);
-            this.Controls.Add(this.separatorControl1);
             this.Controls.Add(this.txtSurname);
             this.Controls.Add(this.txtUsername2);
             this.Controls.Add(this.label4);
@@ -283,7 +370,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SİGN İN";
             this.Load += new System.EventHandler(this.Form2_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.separatorControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checkEdit1.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -297,7 +384,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnSignin;
         private System.Windows.Forms.Label label4;
-        private DevExpress.XtraEditors.SeparatorControl separatorControl1;
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.TextBox txtSurname;
         private System.Windows.Forms.TextBox txtUsername2;
@@ -311,5 +397,11 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label3;
+        private DevExpress.XtraEditors.CheckEdit checkEdit1;
+        private DevExpress.XtraEditors.LabelControl labelControl1;
+        private DevExpress.XtraEditors.LabelControl labelControl2;
+        private DevExpress.XtraEditors.LabelControl labelControl3;
+        private DevExpress.XtraEditors.LabelControl labelControl4;
+        private DevExpress.XtraEditors.LabelControl labelControl5;
     }
 }

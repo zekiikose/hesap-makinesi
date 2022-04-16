@@ -18,6 +18,7 @@ namespace WindowsFormsApp3
         SqlCommand cmd;
         SqlDataReader dr;
         string infocity;
+
         public Form2()
         {
             InitializeComponent();
@@ -51,6 +52,8 @@ namespace WindowsFormsApp3
         private void Register()
         {
 
+
+
             string sex = "male";
             if (radioButtonMale.Checked == true)
             {
@@ -78,8 +81,10 @@ namespace WindowsFormsApp3
             txtSurname.Text = "";
             txtUsername2.Text = "";
             txtPassword2.Text = "";
+            MessageBox.Show("Succes");
 
         }
+
 
 
 
@@ -119,7 +124,48 @@ namespace WindowsFormsApp3
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            Register();
+            if (txtName.Text =="")
+            {
+                labelControl3.Visible = true;
+            }
+            else
+            {
+                labelControl3.Visible = false;
+            }
+            if (txtSurname.Text == "")
+            {
+                labelControl4.Visible = true;
+            }
+            else
+            {
+                labelControl4.Visible = false;
+            }
+            if (txtUsername2.Text == "")
+            {
+                labelControl1.Visible = true;
+            }
+            else
+            {
+                labelControl1.Visible = false;
+            }
+            if (txtPassword2.Text == "")
+            {
+                labelControl2.Visible = true;
+            }
+            else
+            {
+                labelControl2.Visible = false;
+            }
+            if (labelControl1.Visible ==true || labelControl2.Visible==true || labelControl3.Visible==true || labelControl4.Visible==true || labelControl5.Visible==true )
+            {
+                MessageBox.Show("* ile işaretli yerleri doldurun");
+            }
+            else
+            {
+                Register();
+            }
+            
+
         }
 
         private void txtUsername_TextChanged(object sender, EventArgs e)
@@ -154,8 +200,14 @@ namespace WindowsFormsApp3
 
         private void Form2_Load(object sender, EventArgs e)
         {
-            
-                SqlConnection baglanti = new SqlConnection();
+            //labelControl1.Visible = false;
+            //labelControl2.Visible = false;
+            //labelControl3.Visible = false;
+            //labelControl4.Visible = false;
+
+
+
+            SqlConnection baglanti = new SqlConnection();
                 baglanti.ConnectionString =" server = NT00938; Initial Catalog = login; Integrated Security = true";
                 SqlCommand komut = new SqlCommand();
                 komut.CommandText = "SELECT *FROM iller";
@@ -208,6 +260,62 @@ namespace WindowsFormsApp3
                     infocity = dr["sehir"].ToString();
             }
             
+        }
+
+        private void OrtakTxtBox(object sender, EventArgs e)
+        {
+            if (txtName.Text !="")
+            {
+                //labelControl1.Visible = false;
+                //labelControl2.Visible = false;  
+                //labelControl3.Visible = false;
+                //labelControl4.Visible = false;
+            }
+            else
+            {
+                //MessageBox.Show("Bu alanı boş geçemezsiniz");
+                //labelControl1.Visible = true;
+                //labelControl2.Visible = true;
+                //labelControl3.Visible = true;
+                //labelControl4.Visible = true;
+            }
+        }
+
+        private void Ortaklbl(object sender, EventArgs e)
+        {
+            //labelControl1.Visible=false;
+        }
+
+        private void txtName_TextChanged(object sender, EventArgs e)
+        {
+            //if (txtName.Text != "")
+            //{
+            //    labelControl3.Visible = false;
+            //}
+        }
+
+        private void txtSurname_TextChanged(object sender, EventArgs e)
+        {
+            //if (txtSurname.Text != "")
+            //{
+            //    labelControl4.Visible = false;
+            //}
+        }
+
+        private void txtUsername2_TextChanged(object sender, EventArgs e)
+        {
+            //if (txtUsername2.Text != "")
+            //{
+            //    labelControl1.Visible = false;
+            //}
+        }
+
+        private void txtPassword2_TextChanged(object sender, EventArgs e)
+        {
+            //if (txtPassword2.Text != "")
+            //{
+            //    labelControl2.Visible = false;
+            //}
         }
     }
 }
